@@ -29,8 +29,8 @@
       </div>
     </div>
     <?php
-    $conn = mysqli_connect("vesta.uclan.ac.uk", "FPRifas-ali", "NLX7ytZS");
-    mysqli_select_db($conn, 'FPRifas-ali');
+    $conn = mysqli_connect("Localhost", "root", "");
+    mysqli_select_db($conn, 'Zudo');
     $q = "SELECT * FROM product WHERE category = 'boys';";
     $rs = mysqli_query($conn, $q); ?>
     <div class="container">
