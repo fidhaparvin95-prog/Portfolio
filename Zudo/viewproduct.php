@@ -12,77 +12,77 @@
     <title>ZUDO</title>
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
+<style>
+    #viewproduct {
+        text-align: center;
+        width: 200px;
+        font-size: 2rem;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+</style>
 
 <body>
+    <!-- Navigation Bar for admin section -->
     <?php
     $page = "viewproduct";
     include 'adminheader.php';
     ?>
-
+    <!-- End of Navigation Bar Section -->
+    <!-- establishing database connection to fetch data from database -->
     <?php
-    $conn = mysqli_connect("Localhost", "root", "");
-    mysqli_select_db($conn, 'zudo');
+    include 'db.php';
+    //query to fetch data from database
     $q = "select * from product";
     $rs = mysqli_query($conn, $q); ?>
     <div class="container" style="margin-top: 110px;">
         <div class="row">
-            <?php
-            while ($row = mysqli_fetch_array($rs)) { ?>
-
-                <div class="col-md-4">
-
-                    <div class="card" style="width: auto;height: auto;">
-                        <img src="images/<?php print($row['category']) ?>/<?php print($row['product image']) ?>"
-                            class="card-img-top" alt="..." style="width: 100%;height: 350px;">
-                        <div class="card-body">
-                            <h5 class="card-title text-center" style="font-weight: bold;font-size: 1.5rem;color: black;">
-                                <?php print($row['product name']) ?>
-                            </h5>
-                            <p class="card-text text-center" style="color: black;font-weight: bold;">£
-                                <?php print($row['price']) ?>
-                            </p>
-                            <p class="text-center" style="font-size: 1.2rem;">Available Sizes :
-                                <?php print($row['available size']) ?>
-                            </p>
-                            <p class="text-center" style="font-size: 1.2rem;">Product Id :
-                                <?php print($row['product id']) ?>
-                            </p>
-
-                            <div class="rating text-center" style="color: red;">
-                                <!-- <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star-half-o"></i>
-                                <br> -->
-                                <i class="fa fa-circle" style="color: <?php if ($row['status'] == "in-stock") {
-                                    print("green");
-                                } else {
-                                    print("red");
-                                } ?>;">&nbsp;
-                                    <?php print($row['status']) ?>
-                                </i>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <?php
-            }
-            ?>
+            <div class="col-md-12" style="overflow-x:auto;">
+                <center>
+                    <table border="1">
+                        <tr>
+                            <th id="viewproduct">Product Image</th>
+                            <th id="viewproduct">Product Id</th>
+                            <th id="viewproduct">Product Name</th>
+                            <th id="viewproduct">Product Price</th>
+                            <th id="viewproduct">Available Sizes</th>
+                            <th id="viewproduct">Status</th>
+                        </tr>
+                        <?php
+                        //displaying fetched product data from database in table
+                        while ($row = mysqli_fetch_array($rs)) { ?>
+                            <tr>
+                                <td><img src="images/<?php print($row['category']) ?>/<?php print($row['product image']) ?>" class="card-img-top" alt="..." style="width: 100px;height: 100px;"></td>
+                                <td><?php print($row['product id']) ?></td>
+                                <td><?php print($row['product name']) ?></td>
+                                <td><?php print($row['price']) ?></td>
+                                <td><?php print($row['available size']) ?></td>
+                                <td><i class="fa fa-circle" style="color: <?php if ($row['status'] == "in-stock") {
+                                                                                print("green"); //if product available in stock
+                                                                            } else {
+                                                                                print("red"); //if product out of stock
+                                                                            } ?>;">&nbsp;<?php print($row['status']) ?></td>
+                            </tr>
+                        <?php
+                        }
+                        //end of displaying data
+                        ?>
+                    </table>
+                </center>
+                <br>
+            </div>
         </div>
     </div>
     <?php
     mysqli_close($conn);
     ?>
+    <!-- start of footer -->
     <footer>
         <div class="footer">
             <p>Copyright © 2023 Zudo Inc</p>
         </div>
     </footer>
+    <!-- end of footer -->
     <script src="script.js"></script>
 </body>
 

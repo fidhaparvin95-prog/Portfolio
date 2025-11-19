@@ -6,7 +6,7 @@
     font-family: 'Times New Roman', Times, serif;
 }
 body{
-    overflow-x: hidden;
+    overflow: hidden;
     /* background-image: url(images/home-background.jpg); */
 }
 

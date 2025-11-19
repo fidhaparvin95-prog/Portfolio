@@ -10,8 +10,6 @@
     <link rel="icon" type="image/png" href="images/logo.png">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <!-- Acknowledgment - Partial usage of youtube to create this navigation bar -->
     <?php
     $page = "contact";
     include 'header.php';

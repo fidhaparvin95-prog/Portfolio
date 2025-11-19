@@ -1,6 +1,6 @@
 RewriteEngine On
 RewriteBase /
-ErrorDocument 404 https://Localhost/~Zudo/404.html
+ErrorDocument 404 https://vesta.uclan.ac.uk/~FPRifas-ali/404.php
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule \.php$ - [R=404]

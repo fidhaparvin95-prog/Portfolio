@@ -1,3 +1,5 @@
+<!-- Navigation Bar for Admin User -->
+<!-- Acknowledgment - Partial usage of youtube to create this navigation bar navigation bar -->
 <header>
     <nav class="navbar">
         <div class="hamburger">
@@ -27,8 +29,7 @@
                 print("nav-item");
             } ?>">
                 <a href="updateproduct.php" class="nav-link">Update Product</a>
-            </li>
-            
+            </li>           
             <li class="<?php if ($page == "addadmin") {
                 print("nav-item active");
             } else {
@@ -46,6 +47,5 @@
                 </a>
             </li>
         </ul>
-
     </nav>
 </header>

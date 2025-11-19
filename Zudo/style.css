@@ -13,7 +13,7 @@
 
 }
 header{
-    background-color: black;
+    background-color: rgba(0,0,0,0.8);
     width: 100%;
     position: fixed;
     top: 0;
@@ -87,14 +87,7 @@ li{
     background-color: white;
 }
 /* Banner Image Styling */
-.banner img{
-    display: block;
-    padding-top: 110px;
-    padding-left: 2%;
-    height: 350px;
-    width: 98%;
-    position: absolute;
-}
+
 .adminbanner img{
     display: block;
     padding-top: 110px;
@@ -112,7 +105,7 @@ li{
     font-size: 2rem;
     font-style: italic;
     font-family: cursive;
-    padding-top: 355px;
+    padding-top: 350px;
 
 }
 /* Footer*/
@@ -305,7 +298,7 @@ color: white;
     }
     #sale{
         font-size: 1.7rem;
-        padding-top: 300px;
+        padding-top: 350px;
     }
     .banner-product{
         display: flex;

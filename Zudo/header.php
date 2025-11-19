@@ -1,3 +1,5 @@
+<!-- Navigation Bar for customer User before logging in -->
+<!-- Acknowledgment - Partial usage of youtube to create this navigation bar navigation bar -->
 <header>        
         <nav class="navbar">
             <div class="hamburger">

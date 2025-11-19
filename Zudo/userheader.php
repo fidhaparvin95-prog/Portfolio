@@ -1,3 +1,5 @@
+<!-- Navigation Bar for customer User after logging in -->
+<!-- Acknowledgment - Partial usage of youtube to create this navigation bar navigation bar -->
 <header>        
         <nav class="navbar">
             <div class="hamburger">
@@ -12,35 +14,42 @@
             } else {
                 print("nav-item");
             } ?>">
-                    <a href="userhome.php" class="nav-link">home</a>
+                    <a href="index.php" class="nav-link">home</a>
                 </li>
                 <li class="<?php if ($page == "usermens") {
                 print("nav-item active");
             } else {
                 print("nav-item");
             } ?>">
-                    <a href="mensloggedin.php" class="nav-link">mens</a>
+                    <a href="mens.php" class="nav-link">mens</a>
                 </li>
                 <li class="<?php if ($page == "userwomens") {
                 print("nav-item active");
             } else {
                 print("nav-item");
             } ?>">
-                    <a href="womensloggedin.php" class="nav-link">womens</a>
+                    <a href="womens.php" class="nav-link">womens</a>
                 </li>
                 <li class="<?php if ($page == "userboys") {
                 print("nav-item active");
             } else {
                 print("nav-item");
             } ?>">
-                    <a href="boysloggedin.php" class="nav-link">boys</a>
+                    <a href="boys.php" class="nav-link">boys</a>
                 </li>
                 <li class="<?php if ($page == "usergirls") {
                 print("nav-item active");
             } else {
                 print("nav-item");
             } ?>">
-                    <a href="girlsloggedin.php" class="nav-link">girls</a>
+                    <a href="girls.php" class="nav-link">girls</a>
+                </li>
+                <li class="<?php if ($page == "userprofile") {
+                print("nav-item active");
+            } else {
+                print("nav-item");
+            } ?>">
+                    <a href="userprofile.php" class="nav-link">profile</a>
                 </li>
                 
                 <li class="<?php if ($page == "") {
@@ -48,7 +57,7 @@
             } else {
                 print("nav-item");
             } ?>">
-                    <a href="sign-in.php" class="nav-link">Logout(
+                    <a href="logout.php" class="nav-link">Logout(
                     <?php print($_SESSION["susername"]) ?> )</a>
                 </li>
                 
