@@ -70,7 +70,7 @@
             <form name="edit-profile" action="editprofile.php" method="post" align="center"
                 style="background-color: rgb(128,128,128,0.1);width: 100%;height:500px;padding: 40px;border-radius: 10px;">
                 <?php
-                $conn = mysqli_connect("vesta.uclan.ac.uk", "FPRifas-ali", "NLX7ytZS");
+                $conn = mysqli_connect("Localhost", "Zudo", "");
                 mysqli_select_db($conn, 'FPRifas-ali');
                 $q = "select * from adminlogin where userno = " . $_SESSION["suserno"];
                 $rs = mysqli_query($conn, $q);
