@@ -20,8 +20,8 @@ if(isset($_FILES['img']) && strlen($_FILES['img']['name']) > 0 )
  move_uploaded_file($file_tmp,$file_path);
  }
 
- $conn=mysqli_connect("vesta.uclan.ac.uk","FPRifas-ali","NLX7ytZS");
-mysqli_select_db($conn,'FPRifas-ali');
+ $conn=mysqli_connect("Localhost","root","");
+mysqli_select_db($conn,'Zudo');
 $q="INSERT INTO `product`( `product name`, `category`, `price`, `available size`, `product image`, `status`,`userno`) VALUES ('$pname','$category','$pri','$psize','$file_name','$pstatus','$suser');";
 mysqli_query($conn,$q);
 
