@@ -21,7 +21,7 @@ if(isset($_FILES['img']) && strlen($_FILES['img']['name']) > 0 )
  }
 
  $conn=mysqli_connect("Localhost","root","");
-mysqli_select_db($conn,'Zudo');
+mysqli_select_db($conn,'zudo');
 $q="INSERT INTO `product`( `product name`, `category`, `price`, `available size`, `product image`, `status`,`userno`) VALUES ('$pname','$category','$pri','$psize','$file_name','$pstatus','$suser');";
 mysqli_query($conn,$q);
 
