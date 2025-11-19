@@ -30,7 +30,7 @@
     </div>
     <?php
     $conn = mysqli_connect("Localhost", "root", "");
-    mysqli_select_db($conn, 'Zudo');
+    mysqli_select_db($conn, 'zudo');
     $q = "SELECT * FROM product WHERE category = 'boys';";
     $rs = mysqli_query($conn, $q); ?>
     <div class="container">
