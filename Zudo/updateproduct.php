@@ -144,8 +144,8 @@
                         </th>
                     </tr>
                     <?php
-    $conn = mysqli_connect("vesta.uclan.ac.uk", "FPRifas-ali", "NLX7ytZS");
-    mysqli_select_db($conn, 'FPRifas-ali');
+    $conn = mysqli_connect("Localhost", "root", "");
+    mysqli_select_db($conn, 'zudo');
     $q = "select * from `product`";
 
     $rs = mysqli_query($conn, $q);
