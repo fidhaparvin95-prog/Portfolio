@@ -4,8 +4,8 @@ $user=$_POST["user"];
 $userenteredusername=$_POST["username"];
 $userenteredpassword=$_POST["pwd"];
 
-$conn=mysqli_connect("vesta.uclan.ac.uk","FPRifas-ali","NLX7ytZS");
-mysqli_select_db($conn,'FPRifas-ali');
+$conn=mysqli_connect("Localhost","root","");
+mysqli_select_db($conn,'zudo');
 if($user=="user"){
 	$q="select * from userlogin where '$userenteredusername'=username and '$userenteredpassword'=password";
 }
