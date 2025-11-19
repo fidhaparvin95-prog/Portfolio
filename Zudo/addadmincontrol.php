@@ -5,8 +5,8 @@ $name=$_POST["adminname"];
 $username=$_POST["username"];
 $password=$_POST["pwd"];
 
-$conn=mysqli_connect("vesta.uclan.ac.uk","FPRifas-ali","NLX7ytZS");
-mysqli_select_db($conn,'FPRifas-ali');
+$conn=mysqli_connect("Localhost","root","");
+mysqli_select_db($conn,'Zudo');
 $q="INSERT INTO `adminlogin`( `name`, `username`, `password`) VALUES ('$name','$username','$password')";
 mysqli_query($conn,$q);
 
