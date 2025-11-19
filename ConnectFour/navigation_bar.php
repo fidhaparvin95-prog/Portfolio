@@ -1,3 +1,4 @@
+<!-- Navigation Bar -->
 <div class="nav-container">
         <div class="row">
             <div class="col-md-4">
@@ -5,7 +6,7 @@
             </div>        
           <div class="col-md-4">
             <ul class="nav-items">
-            <a href="home.php"><li class="<?php if($page == "home"){print("navitem fas fa-home active");}else{print("fas fa-home");} ?>" style="color:#DE3163;font-size:1.8rem;"></li></a>
+            <a href="<?php if($_SESSION["user"] == "student"){print("home.php");}elseif($_SESSION["user"] == "staff"){print("staffhome.php");}else{print("adminhome.php");} ?>"><li class="<?php if($page == "home"){print("navitem fas fa-home active");}else{print("fas fa-home");} ?>" style="color:#DE3163;font-size:1.8rem;"></li></a>
             <a href="profile.php"><li class="<?php if($page == "profile"){print("navitem fas fa-user-alt active");}else{print("fas fa-user-alt");} ?>" style="color:#DE3163;font-size:1.8rem;"></li></a>
             <a href="logout.php"><li class="fa fa-power-off" style="color:#DE3163;font-size:1.8rem;"></li></a>
             </ul>
@@ -16,3 +17,4 @@
         </div>
         </div>
     </div>
+  <!-- End of navigation bar -->

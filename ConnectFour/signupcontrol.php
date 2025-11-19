@@ -1,11 +1,13 @@
 <?php
 session_start();
+// storing data received from post method into variables
 $firstname = $_POST["fname"];
 $lastname = $_POST["lname"];
 $email = $_POST["em"];
 $password = $_POST["pwd"];
 $confirm_password = $_POST["cpwd"];
 $profile_picture = "images/default-profile-picture.jpg";
+// CHecking if the fields are empty
 if($firstname ==""){
     header("Location:signup.php?err1=enterfirstname");
 }elseif($lastname == ""){
@@ -21,10 +23,11 @@ if($firstname ==""){
     $q="SELECT `email` from `profile` where `email`='$email'";
     $rs=mysqli_query($conn,$q);
     $row=mysqli_fetch_array($rs);
+    // Checking if the email id already exist in the database
     if($email==$row["email"]){
         header("Location:signup.php?err6=emailalreadyexist");   
         }else{
-        $insertquery="INSERT INTO `profile`( `first_name`,`last_name`,`email`,`password`,`confirm_password`,`profile_picture`,`score`) VALUES ('$firstname','$lastname','$email','$password','$confirm_password','$profile_picture',0)";
+        $insertquery="INSERT INTO `profile`( `first_name`,`last_name`,`email`,`password`,`confirm_password`,`profile_picture`,`status`,`score`,`user`) VALUES ('$firstname','$lastname','$email','$password','$confirm_password','$profile_picture','null',0,'student')";
         mysqli_query($conn,$insertquery);
         header("Location:index.php?mssg1=SuccesfullyAdded");
         }

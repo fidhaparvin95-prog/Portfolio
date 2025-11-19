@@ -10,10 +10,12 @@
 </head>
 <body>
    <div class="background">
+    <!-- Acknowledgement - The video used in the login page is from https://www.flaticon.com/ -->
    <video autoplay muted loop id="background-video">
         <source src="images/background-video.mp4" type="video/mp4">
     </video>
         <h1 class="appname">Let's <span style="color: #DE3163;">Connect</span></h1>
+        <!-- Sign up form of the website -->
         <form name="signupform" class="login" method="post" action="signupcontrol.php">
             <table width = 100%>
                 <tr>
@@ -42,6 +44,35 @@
                 <tr>
                     <td colspan="2" style="padding: 5px;padding-right:15px;">
                         <input type="password" class="frm" id="cpwd" name="cpwd" placeholder="Confirm Password" style="width: 100%;height: 50px;border-radius: 10px;border-color: #B6B1B1;border-style: solid;">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <!-- Error or success message for account creation -->
+                        <h5 style="color:red;text-align:center;">
+                        <?php if(isset($_GET["err1"]))
+                            {
+                            print("Enter First Name");
+                            } elseif(isset($_GET["err2"]))
+                            {
+                                print("Enter Last Name");  
+                            } elseif(isset($_GET["err3"]))
+                            {
+                                print("Enter Email");
+                            }elseif(isset($_GET["err4"]))
+                            {
+                                print("Enter Password"); 
+                            }elseif(isset($_GET["err5"]))
+                            {
+                                print("Confirm Password");
+                            }elseif(isset($_GET["err6"]))
+                            {
+                                print("Email already exist");
+                            }elseif(isset($_GET["err7"]))
+                            {
+                                print("Entered Passwords does not match");
+                            }?>
+                        </h5>
                     </td>
                 </tr>
                 <tr>

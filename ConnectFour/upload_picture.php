@@ -2,6 +2,7 @@
 session_start();
 include 'db.php';
 $userid = $_SESSION["suserid"];
+// uploading the file path to the database and move the selected image into the image folder
 if (isset($_FILES['img']) && strlen($_FILES['img']['name']) > 0) {
 
     $file_name = $_FILES['img']['name'];
@@ -15,11 +16,12 @@ if (isset($_FILES['img']) && strlen($_FILES['img']['name']) > 0) {
     move_uploaded_file($file_tmp, $file_path);
 
  }
- $q = "UPDATE `login` SET `profile_picture` = 'images/$file_name' WHERE `user_id` = '$userid'";
+//  updating the image path in the database
+ $q = "UPDATE `profile` SET `profile_picture` = 'images/$file_name' WHERE `user_id` = '$userid'";
 
  if(mysqli_query($conn,$q)){
     unset($_SESSION["suserpic"]);
-    $newpic = "Select `profile_picture` from `login` WHERE `user_id` = '$userid'";
+    $newpic = "Select `profile_picture` from `profile` WHERE `user_id` = '$userid'";
     $rs = mysqli_query($conn,$newpic);
     while($row = mysqli_fetch_array($rs)){
         $_SESSION["suserpic"] = $row["profile_picture"];
