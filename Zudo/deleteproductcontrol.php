@@ -2,8 +2,8 @@
 session_start();
 
 $pid=$_POST["pno"];
-$conn=mysqli_connect("vesta.uclan.ac.uk","FPRifas-ali","NLX7ytZS");
-mysqli_select_db($conn,'FPRifas-ali');
+$conn=mysqli_connect("Localhost","root","");
+mysqli_select_db($conn,'zudo');
 $q="SELECT * FROM `product` WHERE `product id`='$pid'";
 $rs=mysqli_query($conn,$q);
 $row=mysqli_fetch_array($rs);
